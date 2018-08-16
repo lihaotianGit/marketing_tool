@@ -1,0 +1,10 @@
+flyway {
+    driver = 'com.mysql.jdbc.Driver'
+    url = "jdbc:mysql://127.0.0.1:3307/marketing?zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&characterEncoding=UTF-8"
+    user = 'mysql'
+    password = 'mysql'
+    schemas = ['marketing']
+    table = 'marketing_schema_version'
+    locations = ["filesystem:${projectDir}/src/main/resources/migration"]
+    sqlMigrationPrefix = 'MySQL-'
+}

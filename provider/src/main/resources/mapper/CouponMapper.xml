@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jia16.marketing.mapper.CouponMapper">
+
+    <sql id="couponsColumns">
+		ID as "id",
+		ACCOUNT_ID as "accountId",
+		ACTIVITY_CATEGORY_ID as "activityCategoryId",
+		AMOUNT as "amount",
+		STATUS as "status",
+		CREATE_AT as "createAt",
+		UPDATE_AT as "updateAt",
+		CREATE_USER as "createUser",
+		UPDATE_USER as "updateUser",
+		START_DATE as "startDate",
+		ACTIVITY_ID as "activityId",
+		MINI_AMOUNT as "miniAmount",
+		EXPIRE_DATE as "expireDate",
+		INV_REQ_ID as "invReqId"
+	</sql>
+
+    <select id="findById" resultType="Coupon" parameterType="Long">
+        SELECT
+        <include refid="couponsColumns"/>
+        FROM COUPONS WHERE ID=#{id};
+    </select>
+</mapper>
